@@ -5,9 +5,9 @@ sudo: required
 
 before_install:
   # create /tmp/kingbus for unit test.
-  - sudo mkdir /tmp/kingbus/log
-  - sudo mkdir /tmp/kingbus/data
-  - sudo mkdir /tmp/kingbus/syncer
+  - sudo mkdir -p /tmp/kingbus/log
+  - sudo mkdir -p /tmp/kingbus/data
+  - sudo mkdir -p /tmp/kingbus/syncer
 script:
   - make
   - make test
