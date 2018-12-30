@@ -1,0 +1,35 @@
+# node name, keep unique in cluster
+name: 'kingbus_0'
+
+# admin addr for kingbus,ip:port, can't be 0.0.0.0:port
+admin-url: http://127.0.0.1:5000
+
+# metrics pull addr,ip:port, can't be 0.0.0.0:port
+metrics-addr: 127.0.0.1:2728
+
+# time of a heartbeat interval.
+heartbeat-interval: 200ms
+
+# time for an election to timeout.
+election-timeout: 4000ms
+
+# use for cluster initialization, all cluster node should be specified
+initial-cluster: kingbus_0=http://127.0.0.1:9696,kingbus_1=http://127.0.0.1:9697,kingbus_2=http://127.0.0.1:9698
+
+# initial cluster state ('new' or 'existing').
+initial-cluster-state: new
+
+# peer url for raft node communication,ip:port, can't be 0.0.0.0:port
+peer-url: http://127.0.0.1:9696
+
+# the date dir, storage data in the dir
+data-dir: /home/flike/kingbus/data
+
+# storage data reserve size(GB), must large than 4GB
+reserve-data-size: 20
+
+# the log dir
+log-dir: /home/flike/kingbus/log
+
+# log level:debug|info|warn|error|fatal, default is info
+log-level: debug

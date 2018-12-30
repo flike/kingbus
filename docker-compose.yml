@@ -1,0 +1,33 @@
+version: '2.1'
+
+services:
+  kingbus_0:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./tools/docker_compose/config:/config:ro
+      - ./build/data/kingbus_0:/data
+      - ./build/logs/kingbus_0:/logs
+    command:
+      - -config=/config/kingbus_0.yaml
+  kingbus_1:
+    build: .
+    ports:
+    - "5001:5000"
+    volumes:
+    - ./tools/docker_compose/config:/config:ro
+    - ./build/data/kingbus_1:/data
+    - ./build/logs/kingbus_1:/logs
+    command:
+    - -config=/config/kingbus_1.yaml
+  kingbus_2:
+    build: .
+    ports:
+    - "5002:5000"
+    volumes:
+    - ./tools/docker_compose/config:/config:ro
+    - ./build/data/kingbus_2:/data
+    - ./build/logs/kingbus_2:/logs
+    command:
+    - -config=/config/kingbus_2.yaml

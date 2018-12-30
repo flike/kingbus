@@ -1,0 +1,35 @@
+# node name, keep unique in cluster
+name: 'kingbus_2'
+
+# admin addr for kingbus
+admin-url: http://kingbus_2:5000
+
+# metrics pull addr
+metrics-addr: kingbus_2:2728
+
+# time of a heartbeat interval.
+heartbeat-interval: 200ms
+
+# time for an election to timeout.
+election-timeout: 4000ms
+
+# use for cluster initialization, all cluster node should be specified
+initial-cluster: kingbus_0=http://kingbus_0:9696,kingbus_1=http://kingbus_1:9697,kingbus_2=http://kingbus_2:9698
+
+# initial cluster state ('new' or 'existing').
+initial-cluster-state: new
+
+# peer url for raft node communication
+peer-url: http://kingbus_2:9698
+
+# the date dir, storage data in the dir
+data-dir: /data
+
+# storage data reserve size(GB), must large than 4GB
+reserve-data-size: 20
+
+# the log dir
+log-dir: /logs
+
+# log level:debug|info|warn|error|fatal, default is info
+log-level: debug

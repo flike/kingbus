@@ -1,0 +1,772 @@
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+DELIMITER /*!*/;
+# at 4
+#181017 16:09:49 server id 3150  end_log_pos 123 CRC32 0x3c0ea582 	Start: binlog v 4, server v 5.7.23-log created 181017 16:09:49
+BINLOG '
+Te7GWw9ODAAAdwAAAHsAAAAAAAQANS43LjIzLWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAEzgNAAgAEgAEBAQEEgAAXwAEGggAAAAICAgCAAAACgoKKioAEjQA
+AYKlDjw=
+'/*!*/;
+# at 123
+#181017 16:09:49 server id 3150  end_log_pos 194 CRC32 0xf0b268ad 	Previous-GTIDs
+# 214eb71f-96ec-11e8-ab4f-fa163e72d4ae:1-11789
+# at 194
+#181017 16:09:50 server id 3150  end_log_pos 259 CRC32 0x17668d60 	GTID	last_committed=0	sequence_number=1	rbr_only=no
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11790'/*!*/;
+# at 259
+#181017 16:09:50 server id 3150  end_log_pos 475 CRC32 0xf624c8c9 	Query	thread_id=306	exec_time=0	error_code=0
+use `ks`/*!*/;
+SET TIMESTAMP=1539763790/*!*/;
+SET @@session.pseudo_thread_id=306/*!*/;
+SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=0, @@session.unique_checks=1, @@session.autocommit=1/*!*/;
+SET @@session.sql_mode=1436549152/*!*/;
+SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;
+/*!\C utf8 *//*!*/;
+SET @@session.character_set_client=33,@@session.collation_connection=33,@@session.collation_server=8/*!*/;
+SET @@session.lc_time_names=0/*!*/;
+SET @@session.collation_database=DEFAULT/*!*/;
+create table stu (
+	id int(11) NOT NULL,
+	name varchar(40) NOT NULL,
+	age int(11) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+/*!*/;
+# at 475
+#181017 16:09:50 server id 3150  end_log_pos 540 CRC32 0x63af35aa 	GTID	last_committed=1	sequence_number=2	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11791'/*!*/;
+# at 540
+#181017 16:09:50 server id 3150  end_log_pos 610 CRC32 0xe98b5c2b 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 610
+#181017 16:09:50 server id 3150  end_log_pos 658 CRC32 0x960be036 	Table_map: `ks`.`stu` mapped to number 253
+# at 658
+#181017 16:09:50 server id 3150  end_log_pos 709 CRC32 0xe2c9a57d 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAJICAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAA24AuW
+Tu7GWx5ODAAAMwAAAMUCAAAAAP0AAAAAAAEAAgAD//gKAAAABmhlbGxvMWUAAAB9pcni
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=10 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 709
+#181017 16:09:50 server id 3150  end_log_pos 757 CRC32 0xb6285ea2 	Table_map: `ks`.`stu` mapped to number 253
+# at 757
+#181017 16:09:50 server id 3150  end_log_pos 808 CRC32 0xc14930ce 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAPUCAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACiXii2
+Tu7GWx5ODAAAMwAAACgDAAAAAP0AAAAAAAEAAgAD//gMAAAABmhlbGxvMmYAAADOMEnB
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=12 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 808
+#181017 16:09:50 server id 3150  end_log_pos 856 CRC32 0xd1b3dd52 	Table_map: `ks`.`stu` mapped to number 253
+# at 856
+#181017 16:09:50 server id 3150  end_log_pos 924 CRC32 0x6425f5f5 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAFgDAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABS3bPR
+Tu7GWx9ODAAARAAAAJwDAAAAAP0AAAAAAAEAAgAD///4CgAAAAZoZWxsbzFlAAAA+AoAAAAGaGVs
+bG8xTQQAAPX1JWQ=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=10 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=10 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 924
+#181017 16:09:50 server id 3150  end_log_pos 972 CRC32 0x1a628282 	Table_map: `ks`.`stu` mapped to number 253
+# at 972
+#181017 16:09:50 server id 3150  end_log_pos 1023 CRC32 0x42263661 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAMwDAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACCgmIa
+Tu7GWyBODAAAMwAAAP8DAAAAAP0AAAAAAAEAAgAD//gMAAAABmhlbGxvMmYAAABhNiZC
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=12 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 1023
+#181017 16:09:50 server id 3150  end_log_pos 1054 CRC32 0xe5409ad3 	Xid = 44853
+COMMIT/*!*/;
+# at 1054
+#181017 16:09:50 server id 3150  end_log_pos 1119 CRC32 0xbab6c285 	GTID	last_committed=2	sequence_number=3	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11792'/*!*/;
+# at 1119
+#181017 16:09:50 server id 3150  end_log_pos 1189 CRC32 0x50dbc677 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 1189
+#181017 16:09:50 server id 3150  end_log_pos 1237 CRC32 0x38e608f3 	Table_map: `ks`.`stu` mapped to number 253
+# at 1237
+#181017 16:09:50 server id 3150  end_log_pos 1288 CRC32 0xe2f4e754 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAANUEAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADzCOY4
+Tu7GWx5ODAAAMwAAAAgFAAAAAP0AAAAAAAEAAgAD//gUAAAABmhlbGxvMWUAAABU5/Ti
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=20 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 1288
+#181017 16:09:50 server id 3150  end_log_pos 1336 CRC32 0x5065b3c1 	Table_map: `ks`.`stu` mapped to number 253
+# at 1336
+#181017 16:09:50 server id 3150  end_log_pos 1387 CRC32 0xaf55256b 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAADgFAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADBs2VQ
+Tu7GWx5ODAAAMwAAAGsFAAAAAP0AAAAAAAEAAgAD//gWAAAABmhlbGxvMmYAAABrJVWv
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=22 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 1387
+#181017 16:09:50 server id 3150  end_log_pos 1435 CRC32 0x5af1e757 	Table_map: `ks`.`stu` mapped to number 253
+# at 1435
+#181017 16:09:50 server id 3150  end_log_pos 1503 CRC32 0x0e83860d 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAJsFAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABX5/Fa
+Tu7GWx9ODAAARAAAAN8FAAAAAP0AAAAAAAEAAgAD///4FAAAAAZoZWxsbzFlAAAA+BQAAAAGaGVs
+bG8xTQQAAA2Ggw4=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=20 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=20 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 1503
+#181017 16:09:50 server id 3150  end_log_pos 1551 CRC32 0xd5819d9f 	Table_map: `ks`.`stu` mapped to number 253
+# at 1551
+#181017 16:09:50 server id 3150  end_log_pos 1602 CRC32 0x5d807ca4 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAA8GAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACfnYHV
+Tu7GWyBODAAAMwAAAEIGAAAAAP0AAAAAAAEAAgAD//gWAAAABmhlbGxvMmYAAACkfIBd
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=22 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 1602
+#181017 16:09:50 server id 3150  end_log_pos 1633 CRC32 0x2c6d3a19 	Xid = 44859
+COMMIT/*!*/;
+# at 1633
+#181017 16:09:50 server id 3150  end_log_pos 1698 CRC32 0x9769a5d9 	GTID	last_committed=3	sequence_number=4	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11793'/*!*/;
+# at 1698
+#181017 16:09:50 server id 3150  end_log_pos 1768 CRC32 0xf101b970 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 1768
+#181017 16:09:50 server id 3150  end_log_pos 1816 CRC32 0x2f2869b0 	Table_map: `ks`.`stu` mapped to number 253
+# at 1816
+#181017 16:09:50 server id 3150  end_log_pos 1867 CRC32 0x13402e72 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAABgHAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACwaSgv
+Tu7GWx5ODAAAMwAAAEsHAAAAAP0AAAAAAAEAAgAD//geAAAABmhlbGxvMWUAAAByLkAT
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=30 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 1867
+#181017 16:09:50 server id 3150  end_log_pos 1915 CRC32 0x34947460 	Table_map: `ks`.`stu` mapped to number 253
+# at 1915
+#181017 16:09:50 server id 3150  end_log_pos 1966 CRC32 0xfa7fc995 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAHsHAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABgdJQ0
+Tu7GWx5ODAAAMwAAAK4HAAAAAP0AAAAAAAEAAgAD//ggAAAABmhlbGxvMmYAAACVyX/6
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=32 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 1966
+#181017 16:09:50 server id 3150  end_log_pos 2014 CRC32 0x18505210 	Table_map: `ks`.`stu` mapped to number 253
+# at 2014
+#181017 16:09:50 server id 3150  end_log_pos 2082 CRC32 0x75bd7a70 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAN4HAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAAQUlAY
+Tu7GWx9ODAAARAAAACIIAAAAAP0AAAAAAAEAAgAD///4HgAAAAZoZWxsbzFlAAAA+B4AAAAGaGVs
+bG8xTQQAAHB6vXU=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=30 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=30 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 2082
+#181017 16:09:50 server id 3150  end_log_pos 2130 CRC32 0xc7947161 	Table_map: `ks`.`stu` mapped to number 253
+# at 2130
+#181017 16:09:50 server id 3150  end_log_pos 2181 CRC32 0xf681f023 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAFIIAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABhcZTH
+Tu7GWyBODAAAMwAAAIUIAAAAAP0AAAAAAAEAAgAD//ggAAAABmhlbGxvMmYAAAAj8IH2
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=32 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 2181
+#181017 16:09:50 server id 3150  end_log_pos 2212 CRC32 0xad72cd8f 	Xid = 44865
+COMMIT/*!*/;
+# at 2212
+#181017 16:09:50 server id 3150  end_log_pos 2277 CRC32 0x1e0d0489 	GTID	last_committed=4	sequence_number=5	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11794'/*!*/;
+# at 2277
+#181017 16:09:50 server id 3150  end_log_pos 2347 CRC32 0xf90bf48e 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 2347
+#181017 16:09:50 server id 3150  end_log_pos 2395 CRC32 0x822c3c30 	Table_map: `ks`.`stu` mapped to number 253
+# at 2395
+#181017 16:09:50 server id 3150  end_log_pos 2446 CRC32 0xf1450099 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAFsJAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAAwPCyC
+Tu7GWx5ODAAAMwAAAI4JAAAAAP0AAAAAAAEAAgAD//goAAAABmhlbGxvMWUAAACZAEXx
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=40 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 2446
+#181017 16:09:50 server id 3150  end_log_pos 2494 CRC32 0xa1f02282 	Table_map: `ks`.`stu` mapped to number 253
+# at 2494
+#181017 16:09:50 server id 3150  end_log_pos 2545 CRC32 0xf438102c 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAL4JAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACCIvCh
+Tu7GWx5ODAAAMwAAAPEJAAAAAP0AAAAAAAEAAgAD//gqAAAABmhlbGxvMmYAAAAsEDj0
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=42 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 2545
+#181017 16:09:50 server id 3150  end_log_pos 2593 CRC32 0x4a9727b1 	Table_map: `ks`.`stu` mapped to number 253
+# at 2593
+#181017 16:09:50 server id 3150  end_log_pos 2661 CRC32 0xcbaa0eb1 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAACEKAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACxJ5dK
+Tu7GWx9ODAAARAAAAGUKAAAAAP0AAAAAAAEAAgAD///4KAAAAAZoZWxsbzFlAAAA+CgAAAAGaGVs
+bG8xTQQAALEOqss=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=40 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=40 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 2661
+#181017 16:09:50 server id 3150  end_log_pos 2709 CRC32 0x86ca6400 	Table_map: `ks`.`stu` mapped to number 253
+# at 2709
+#181017 16:09:50 server id 3150  end_log_pos 2760 CRC32 0x235b5040 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAJUKAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAAAZMqG
+Tu7GWyBODAAAMwAAAMgKAAAAAP0AAAAAAAEAAgAD//gqAAAABmhlbGxvMmYAAABAUFsj
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=42 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 2760
+#181017 16:09:50 server id 3150  end_log_pos 2791 CRC32 0x3699a369 	Xid = 44871
+COMMIT/*!*/;
+# at 2791
+#181017 16:09:50 server id 3150  end_log_pos 2856 CRC32 0x68e4258c 	GTID	last_committed=5	sequence_number=6	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11795'/*!*/;
+# at 2856
+#181017 16:09:50 server id 3150  end_log_pos 2926 CRC32 0x18f60503 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 2926
+#181017 16:09:50 server id 3150  end_log_pos 2974 CRC32 0xdebdf8f3 	Table_map: `ks`.`stu` mapped to number 253
+# at 2974
+#181017 16:09:50 server id 3150  end_log_pos 3025 CRC32 0x0c4f847a 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAJ4LAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADz+L3e
+Tu7GWx5ODAAAMwAAANELAAAAAP0AAAAAAAEAAgAD//gyAAAABmhlbGxvMWUAAAB6hE8M
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=50 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 3025
+#181017 16:09:50 server id 3150  end_log_pos 3073 CRC32 0xc45971e0 	Table_map: `ks`.`stu` mapped to number 253
+# at 3073
+#181017 16:09:50 server id 3150  end_log_pos 3124 CRC32 0x6683fc12 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAAEMAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADgcVnE
+Tu7GWx5ODAAAMwAAADQMAAAAAP0AAAAAAAEAAgAD//g0AAAABmhlbGxvMmYAAAAS/INm
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=52 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 3124
+#181017 16:09:50 server id 3150  end_log_pos 3172 CRC32 0xf9b51ed6 	Table_map: `ks`.`stu` mapped to number 253
+# at 3172
+#181017 16:09:50 server id 3150  end_log_pos 3240 CRC32 0x891814c2 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAGQMAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADWHrX5
+Tu7GWx9ODAAARAAAAKgMAAAAAP0AAAAAAAEAAgAD///4MgAAAAZoZWxsbzFlAAAA+DIAAAAGaGVs
+bG8xTQQAAMIUGIk=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=50 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=50 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 3240
+#181017 16:09:50 server id 3150  end_log_pos 3288 CRC32 0x42d71bef 	Table_map: `ks`.`stu` mapped to number 253
+# at 3288
+#181017 16:09:50 server id 3150  end_log_pos 3339 CRC32 0x07087b2c 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAANgMAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADvG9dC
+Tu7GWyBODAAAMwAAAAsNAAAAAP0AAAAAAAEAAgAD//g0AAAABmhlbGxvMmYAAAAsewgH
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=52 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 3339
+#181017 16:09:50 server id 3150  end_log_pos 3370 CRC32 0xaf1ad1b1 	Xid = 44877
+COMMIT/*!*/;
+# at 3370
+#181017 16:09:50 server id 3150  end_log_pos 3435 CRC32 0xc5e1667a 	GTID	last_committed=6	sequence_number=7	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11796'/*!*/;
+# at 3435
+#181017 16:09:50 server id 3150  end_log_pos 3505 CRC32 0x61ce0cc1 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 3505
+#181017 16:09:50 server id 3150  end_log_pos 3553 CRC32 0xee9dc7cf 	Table_map: `ks`.`stu` mapped to number 253
+# at 3553
+#181017 16:09:50 server id 3150  end_log_pos 3604 CRC32 0xda96f70b 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAOENAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADPx53u
+Tu7GWx5ODAAAMwAAABQOAAAAAP0AAAAAAAEAAgAD//g8AAAABmhlbGxvMWUAAAAL95ba
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=60 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 3604
+#181017 16:09:50 server id 3150  end_log_pos 3652 CRC32 0x86f8c4a7 	Table_map: `ks`.`stu` mapped to number 253
+# at 3652
+#181017 16:09:50 server id 3150  end_log_pos 3703 CRC32 0x97373534 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAEQOAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACnxPiG
+Tu7GWx5ODAAAMwAAAHcOAAAAAP0AAAAAAAEAAgAD//g+AAAABmhlbGxvMmYAAAA0NTeX
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=62 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 3703
+#181017 16:09:50 server id 3150  end_log_pos 3751 CRC32 0x8374a8f3 	Table_map: `ks`.`stu` mapped to number 253
+# at 3751
+#181017 16:09:50 server id 3150  end_log_pos 3819 CRC32 0x34f51862 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAKcOAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADzqHSD
+Tu7GWx9ODAAARAAAAOsOAAAAAP0AAAAAAAEAAgAD///4PAAAAAZoZWxsbzFlAAAA+DwAAAAGaGVs
+bG8xTQQAAGIY9TQ=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=60 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=60 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 3819
+#181017 16:09:50 server id 3150  end_log_pos 3867 CRC32 0x04764ec2 	Table_map: `ks`.`stu` mapped to number 253
+# at 3867
+#181017 16:09:50 server id 3150  end_log_pos 3918 CRC32 0x2db154be 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAABsPAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AADCTnYE
+Tu7GWyBODAAAMwAAAE4PAAAAAP0AAAAAAAEAAgAD//g+AAAABmhlbGxvMmYAAAC+VLEt
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=62 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 3918
+#181017 16:09:50 server id 3150  end_log_pos 3949 CRC32 0x82031ad2 	Xid = 44883
+COMMIT/*!*/;
+# at 3949
+#181017 16:09:50 server id 3150  end_log_pos 4014 CRC32 0xbb2039f4 	GTID	last_committed=7	sequence_number=8	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11797'/*!*/;
+# at 4014
+#181017 16:09:50 server id 3150  end_log_pos 4084 CRC32 0x8033fd4c 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 4084
+#181017 16:09:50 server id 3150  end_log_pos 4132 CRC32 0x4fb48837 	Table_map: `ks`.`stu` mapped to number 253
+# at 4132
+#181017 16:09:50 server id 3150  end_log_pos 4183 CRC32 0x439a2526 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAACQQAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAA3iLRP
+Tu7GWx5ODAAAMwAAAFcQAAAAAP0AAAAAAAEAAgAD//hGAAAABmhlbGxvMWUAAAAmJZpD
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=70 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 4183
+#181017 16:09:50 server id 3150  end_log_pos 4231 CRC32 0x4520dca1 	Table_map: `ks`.`stu` mapped to number 253
+# at 4231
+#181017 16:09:50 server id 3150  end_log_pos 4282 CRC32 0x9961ece1 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAIcQAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACh3CBF
+Tu7GWx5ODAAAMwAAALoQAAAAAP0AAAAAAAEAAgAD//hIAAAABmhlbGxvMmYAAADh7GGZ
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=72 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 4282
+#181017 16:09:50 server id 3150  end_log_pos 4330 CRC32 0x0ff3f51f 	Table_map: `ks`.`stu` mapped to number 253
+# at 4330
+#181017 16:09:50 server id 3150  end_log_pos 4398 CRC32 0x8b1c912e 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAOoQAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAAf9fMP
+Tu7GWx9ODAAARAAAAC4RAAAAAP0AAAAAAAEAAgAD///4RgAAAAZoZWxsbzFlAAAA+EYAAAAGaGVs
+bG8xTQQAAC6RHIs=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=70 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=70 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 4398
+#181017 16:09:50 server id 3150  end_log_pos 4446 CRC32 0xffce55a6 	Table_map: `ks`.`stu` mapped to number 253
+# at 4446
+#181017 16:09:50 server id 3150  end_log_pos 4497 CRC32 0x4f5536a4 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAF4RAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACmVc7/
+Tu7GWyBODAAAMwAAAJERAAAAAP0AAAAAAAEAAgAD//hIAAAABmhlbGxvMmYAAACkNlVP
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=72 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 4497
+#181017 16:09:50 server id 3150  end_log_pos 4528 CRC32 0x4ea0f854 	Xid = 44889
+COMMIT/*!*/;
+# at 4528
+#181017 16:09:50 server id 3150  end_log_pos 4593 CRC32 0x3b700f1d 	GTID	last_committed=8	sequence_number=9	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11798'/*!*/;
+# at 4593
+#181017 16:09:50 server id 3150  end_log_pos 4663 CRC32 0x71da973d 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 4663
+#181017 16:09:50 server id 3150  end_log_pos 4711 CRC32 0x2b454f96 	Table_map: `ks`.`stu` mapped to number 253
+# at 4711
+#181017 16:09:50 server id 3150  end_log_pos 4762 CRC32 0x611678b7 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAGcSAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACWT0Ur
+Tu7GWx5ODAAAMwAAAJoSAAAAAP0AAAAAAAEAAgAD//hQAAAABmhlbGxvMWUAAAC3eBZh
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=80 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 4762
+#181017 16:09:50 server id 3150  end_log_pos 4810 CRC32 0x70be2f6e 	Table_map: `ks`.`stu` mapped to number 253
+# at 4810
+#181017 16:09:50 server id 3150  end_log_pos 4861 CRC32 0xbebefe50 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAMoSAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABuL75w
+Tu7GWx5ODAAAMwAAAP0SAAAAAP0AAAAAAAEAAgAD//hSAAAABmhlbGxvMmYAAABQ/r6+
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=82 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 4861
+#181017 16:09:50 server id 3150  end_log_pos 4909 CRC32 0x72cd0376 	Table_map: `ks`.`stu` mapped to number 253
+# at 4909
+#181017 16:09:50 server id 3150  end_log_pos 4977 CRC32 0x48f44536 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAC0TAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAB2A81y
+Tu7GWx9ODAAARAAAAHETAAAAAP0AAAAAAAEAAgAD///4UAAAAAZoZWxsbzFlAAAA+FAAAAAGaGVs
+bG8xTQQAADZF9Eg=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=80 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=80 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 4977
+#181017 16:09:50 server id 3150  end_log_pos 5025 CRC32 0x205d973e 	Table_map: `ks`.`stu` mapped to number 253
+# at 5025
+#181017 16:09:50 server id 3150  end_log_pos 5076 CRC32 0x218e8679 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAKETAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAA+l10g
+Tu7GWyBODAAAMwAAANQTAAAAAP0AAAAAAAEAAgAD//hSAAAABmhlbGxvMmYAAAB5ho4h
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=82 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 5076
+#181017 16:09:50 server id 3150  end_log_pos 5107 CRC32 0xd54b96b2 	Xid = 44895
+COMMIT/*!*/;
+# at 5107
+#181017 16:09:50 server id 3150  end_log_pos 5172 CRC32 0xd70073a6 	GTID	last_committed=9	sequence_number=10	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11799'/*!*/;
+# at 5172
+#181017 16:09:50 server id 3150  end_log_pos 5242 CRC32 0xac421e4f 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 5242
+#181017 16:09:50 server id 3150  end_log_pos 5290 CRC32 0xf16841fd 	Table_map: `ks`.`stu` mapped to number 253
+# at 5290
+#181017 16:09:50 server id 3150  end_log_pos 5341 CRC32 0xd961b685 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAKoUAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAD9QWjx
+Tu7GWx5ODAAAMwAAAN0UAAAAAP0AAAAAAAEAAgAD//haAAAABmhlbGxvMWUAAACFtmHZ
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=90 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 5341
+#181017 16:09:50 server id 3150  end_log_pos 5389 CRC32 0xfc035527 	Table_map: `ks`.`stu` mapped to number 253
+# at 5389
+#181017 16:09:50 server id 3150  end_log_pos 5440 CRC32 0x02e36f5f 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAA0VAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAAnVQP8
+Tu7GWx5ODAAAMwAAAEAVAAAAAP0AAAAAAAEAAgAD//hcAAAABmhlbGxvMmYAAABfb+MC
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=92 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 5440
+#181017 16:09:50 server id 3150  end_log_pos 5488 CRC32 0x58aef189 	Table_map: `ks`.`stu` mapped to number 253
+# at 5488
+#181017 16:09:50 server id 3150  end_log_pos 5556 CRC32 0x4718cec7 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAHAVAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACJ8a5Y
+Tu7GWx9ODAAARAAAALQVAAAAAP0AAAAAAAEAAgAD///4WgAAAAZoZWxsbzFlAAAA+FoAAAAGaGVs
+bG8xTQQAAMfOGEc=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=90 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=90 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 5556
+#181017 16:09:50 server id 3150  end_log_pos 5604 CRC32 0x937fae59 	Table_map: `ks`.`stu` mapped to number 253
+# at 5604
+#181017 16:09:50 server id 3150  end_log_pos 5655 CRC32 0x2c5a13bc 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAOQVAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABZrn+T
+Tu7GWyBODAAAMwAAABcWAAAAAP0AAAAAAAEAAgAD//hcAAAABmhlbGxvMmYAAAC8E1os
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=92 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 5655
+#181017 16:09:50 server id 3150  end_log_pos 5686 CRC32 0x9a001c6a 	Xid = 44901
+COMMIT/*!*/;
+# at 5686
+#181017 16:09:50 server id 3150  end_log_pos 5751 CRC32 0x289b8832 	GTID	last_committed=10	sequence_number=11	rbr_only=yes
+/*!50718 SET TRANSACTION ISOLATION LEVEL READ COMMITTED*//*!*/;
+SET @@SESSION.GTID_NEXT= '214eb71f-96ec-11e8-ab4f-fa163e72d4ae:11800'/*!*/;
+# at 5751
+#181017 16:09:50 server id 3150  end_log_pos 5821 CRC32 0x69507266 	Query	thread_id=306	exec_time=0	error_code=0
+SET TIMESTAMP=1539763790/*!*/;
+BEGIN
+/*!*/;
+# at 5821
+#181017 16:09:50 server id 3150  end_log_pos 5869 CRC32 0xae062518 	Table_map: `ks`.`stu` mapped to number 253
+# at 5869
+#181017 16:09:50 server id 3150  end_log_pos 5920 CRC32 0xe489a31b 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAO0WAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAAYJQau
+Tu7GWx5ODAAAMwAAACAXAAAAAP0AAAAAAAEAAgAD//hkAAAABmhlbGxvMWUAAAAbo4nk
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=100 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+# at 5920
+#181017 16:09:50 server id 3150  end_log_pos 5968 CRC32 0x27e32bf8 	Table_map: `ks`.`stu` mapped to number 253
+# at 5968
+#181017 16:09:50 server id 3150  end_log_pos 6019 CRC32 0xc931ccf1 	Write_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAAFAXAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AAD4K+Mn
+Tu7GWx5ODAAAMwAAAIMXAAAAAP0AAAAAAAEAAgAD//hmAAAABmhlbGxvMmYAAADxzDHJ
+'/*!*/;
+### INSERT INTO `ks`.`stu`
+### SET
+###   @1=102 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 6019
+#181017 16:09:50 server id 3150  end_log_pos 6067 CRC32 0x226f47ac 	Table_map: `ks`.`stu` mapped to number 253
+# at 6067
+#181017 16:09:50 server id 3150  end_log_pos 6135 CRC32 0xdfa0f2c7 	Update_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAALMXAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AACsR28i
+Tu7GWx9ODAAARAAAAPcXAAAAAP0AAAAAAAEAAgAD///4ZAAAAAZoZWxsbzFlAAAA+GQAAAAGaGVs
+bG8xTQQAAMfyoN8=
+'/*!*/;
+### UPDATE `ks`.`stu`
+### WHERE
+###   @1=100 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=101 /* INT meta=0 nullable=0 is_null=0 */
+### SET
+###   @1=100 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello1' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=1101 /* INT meta=0 nullable=0 is_null=0 */
+# at 6135
+#181017 16:09:50 server id 3150  end_log_pos 6183 CRC32 0x64eaaf45 	Table_map: `ks`.`stu` mapped to number 253
+# at 6183
+#181017 16:09:50 server id 3150  end_log_pos 6234 CRC32 0x8208d01b 	Delete_rows: table id 253 flags: STMT_END_F
+
+BINLOG '
+Tu7GWxNODAAAMAAAACcYAAAAAP0AAAAAAAEAAmtzAANzdHUAAwMPAwJ4AABFr+pk
+Tu7GWyBODAAAMwAAAFoYAAAAAP0AAAAAAAEAAgAD//hmAAAABmhlbGxvMmYAAAAb0AiC
+'/*!*/;
+### DELETE FROM `ks`.`stu`
+### WHERE
+###   @1=102 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='hello2' /* VARSTRING(120) meta=120 nullable=0 is_null=0 */
+###   @3=102 /* INT meta=0 nullable=0 is_null=0 */
+# at 6234
+#181017 16:09:50 server id 3150  end_log_pos 6265 CRC32 0x624141ef 	Xid = 44907
+COMMIT/*!*/;
+# at 6265
+#181017 16:09:50 server id 3150  end_log_pos 6312 CRC32 0x2c9ac991 	Rotate to mysql_bin.000012  pos: 4
+SET @@SESSION.GTID_NEXT= 'AUTOMATIC' /* added by mysqlbinlog */ /*!*/;
+DELIMITER ;
+# End of log file
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;
