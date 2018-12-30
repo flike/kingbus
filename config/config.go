@@ -62,7 +62,7 @@ type SyncerConfig struct {
 	MaxEventBytes uint64
 }
 
-//NodeConfig is the config of raft node
+//RaftNodeConfig is the config of raft node
 type RaftNodeConfig struct {
 	Name                string
 	AppliedIndex        uint64

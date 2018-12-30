@@ -5,22 +5,23 @@ import (
 	"encoding/binary"
 	"flag"
 	"fmt"
+	"os"
+	"strings"
+
 	"github.com/coreos/bbolt"
 	"github.com/flike/kingbus/storage"
 	gomysql "github.com/siddontang/go-mysql/mysql"
 	"github.com/siddontang/go-mysql/replication"
-	"os"
-	"strings"
 )
 
 const (
-	MetadataFile = "kingbus_meta.db"
-	BucketName   = "kingbus_meta_bucket"
+	metadataFile = "kingbus_meta.db"
+	bucketName   = "kingbus_meta_bucket"
 )
 
 //dump metadata store
 func main() {
-	dbFilePath := flag.String("db", MetadataFile, "kingbus metadata file")
+	dbFilePath := flag.String("db", metadataFile, "kingbus metadata file")
 	flag.Parse()
 
 	db, err := bolt.Open(*dbFilePath, 0600, nil)
@@ -31,7 +32,7 @@ func main() {
 
 	err = db.View(func(tx *bolt.Tx) error {
 		// Assume bucket exists and has keys
-		b := tx.Bucket([]byte(BucketName))
+		b := tx.Bucket([]byte(bucketName))
 		if b == nil {
 			return fmt.Errorf("bucket not exist")
 		}
@@ -43,7 +44,7 @@ func main() {
 				fmt.Printf("%s value is:\n", key)
 				binlogParser := replication.NewBinlogParser()
 				r1 := bytes.NewReader(v)
-				_, err := binlogParser.ParseSingleEvent(r1, DumpBinlogEvent)
+				_, err := binlogParser.ParseSingleEvent(r1, dumpBinlogEvent)
 				if err != nil {
 					fmt.Printf("ParseSingleEvent error,err:%s", err)
 				}
@@ -79,7 +80,7 @@ func main() {
 	}
 }
 
-func DumpBinlogEvent(e *replication.BinlogEvent) error {
+func dumpBinlogEvent(e *replication.BinlogEvent) error {
 	e.Header.Dump(os.Stdout)
 	e.Event.Dump(os.Stdout)
 	return nil

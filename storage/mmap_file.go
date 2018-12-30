@@ -158,9 +158,9 @@ func (f *MmapFile) readRaftEntry(position int) (raftpb.Entry, int) {
 	return entry, endPosition
 }
 
-func (f *MmapFile) readIndexEntry(postion int) *IndexEntry {
+func (f *MmapFile) readIndexEntry(position int) *IndexEntry {
 	var entry IndexEntry
-	indexEntryBuf := f.mappedData[postion : postion+IndexEntrySize]
+	indexEntryBuf := f.mappedData[position : position+IndexEntrySize]
 	err := entry.Unmarshal(indexEntryBuf)
 	if err != nil {
 		log.Log.Fatalf("index entry Unmarshal error,err:%s,buf:%v", err, indexEntryBuf)

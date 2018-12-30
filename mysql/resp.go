@@ -147,9 +147,8 @@ func (c *Conn) writeValue(value interface{}) error {
 	case *gomysql.Result:
 		if v != nil && v.Resultset != nil {
 			return c.writeResultset(v.Resultset)
-		} else {
-			return c.writeOK(v)
 		}
+		return c.writeOK(v)
 	case []*gomysql.Field:
 		return c.writeFieldList(v)
 	default:

@@ -36,7 +36,7 @@ import (
 	"go.uber.org/atomic"
 )
 
-//KingbusInfo get the kingbus server infomation
+//KingbusInfo get the kingbus server information
 type KingbusInfo interface {
 	AppliedIndex() uint64
 	LastBinlogFile() string

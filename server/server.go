@@ -501,9 +501,9 @@ func restartEtcdNode(cfg config.RaftNodeConfig, store storage.Storage) (
 	return member.ID, n, cl
 }
 
-//SyncAdminURL sync the admin url bewteen raft cluster
+//SyncAdminURL sync the admin url between raft cluster
 //since only propose data in lead node, other followers should wait
-//apply the lead admin url,then send http api request to lead amdin url.
+//apply the lead admin url,then send http api request to lead admin url.
 func (s *KingbusServer) SyncAdminURL() {
 	var id types.ID
 	var leaderAdminURL string
