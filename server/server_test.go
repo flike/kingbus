@@ -49,7 +49,7 @@ const (
 	nodeNamePrefix = "node_"
 	TestDataDir    = "/tmp/kingbus/data"
 	TestSyncerDir  = "/tmp/kingbus/syncer"
-	TempLogDir     = "/tmp/kingbus/data/log"
+	TempLogDir     = "/tmp/kingbus/log"
 )
 
 func TestSyncAdminURL(t *testing.T) {
