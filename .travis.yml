@@ -4,10 +4,8 @@ go:
 sudo: required
 
 before_install:
-  # create /tmp/kingbus for unit test.
-  - sudo mkdir -p /tmp/kingbus/log
-  - sudo mkdir -p /tmp/kingbus/data
-  - sudo mkdir -p /tmp/kingbus/syncer
+  # create /tmp for unit test.
+  - sudo chown -R travis /tmp
 script:
   - make
   - make test
