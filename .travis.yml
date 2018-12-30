@@ -1,6 +1,9 @@
 language: go
 go:
   - 1.11.x
+before_install:
+  # create /tmp/kingbus for unit test.
+  - sudo mkdir /tmp/kingbus
 script:
   - make
   - make test

@@ -34,7 +34,7 @@ import (
 )
 
 const (
-	TestDataDir = "/Users/flike/kingbus_data"
+	TestDataDir = "/tmp/kingbus/kingbus_data"
 )
 
 var tempLogDir = "/tmp/kingbus/log"

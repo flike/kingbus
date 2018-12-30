@@ -218,11 +218,11 @@ type SyncerStatus struct {
 //BinlogServerStatus is the status of binlog master dump for user
 type BinlogServerStatus struct {
 	BinlogServerConfig
-	Slaves []*mysql.Slave `json:"slaves"`
-	CurrentGtid      string `json:"current_gtid"`
-	LastBinlogFile   string `json:"last_binlog_file"`
-	LastFilePosition uint32 `json:"last_file_position"`
-	ExecutedGtidSet  string `json:"executed_gtid_set"`
-	PurgedGtidSet    string `json:"purged_gtid_set"`
-	Status string         `json:"status"`
+	Slaves           []*mysql.Slave `json:"slaves"`
+	CurrentGtid      string         `json:"current_gtid"`
+	LastBinlogFile   string         `json:"last_binlog_file"`
+	LastFilePosition uint32         `json:"last_file_position"`
+	ExecutedGtidSet  string         `json:"executed_gtid_set"`
+	PurgedGtidSet    string         `json:"purged_gtid_set"`
+	Status           string         `json:"status"`
 }

@@ -1,5 +1,7 @@
 ![](docs/img/kingbus_logo.png)
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/flike/kingbus)](https://goreportcard.com/report/github.com/flike/kingbus)
+
 # kingbus简介
 
 kingbus是一个基于raft强一致协议实现的分布式MySQL binlog 存储系统。它能够充当一个MySQL Slave从真正的Master上同步binglog，并存储在分布式集群中；同时又充当一个MySQL Master将集群中的binlog 同步给其他Slave。kingbus具有如下特性：
