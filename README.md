@@ -2,6 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/flike/kingbus)](https://goreportcard.com/report/github.com/flike/kingbus)
 [![Build Status](https://travis-ci.org/flike/kingbus.svg?branch=master)](https://travis-ci.org/flike/kingbus)
+![](https://img.shields.io/github/license/flike/kingbus.svg)
 
 ## What is kingbus? [中文](README_ZH.md)
 Kingbus is a distributed MySQL binlog store based on raft. Kingbus can act as a slave to the real master and as a master to the slaves in the same way as an intermediate MySQL master does. Kingbus has the following key features:

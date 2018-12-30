@@ -2,6 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/flike/kingbus)](https://goreportcard.com/report/github.com/flike/kingbus)
 [![Build Status](https://travis-ci.org/flike/kingbus.svg?branch=master)](https://travis-ci.org/flike/kingbus)
+![](https://img.shields.io/github/license/flike/kingbus.svg)
 
 # kingbus简介
 
