@@ -4,7 +4,6 @@ go:
 sudo: required
 
 before_install:
-  # create /tmp for unit test.
   - sudo chown -R travis /tmp
 script:
   - make
