@@ -6,4 +6,4 @@ before_install:
   - sudo mkdir /tmp/kingbus
 script:
   - make
-  - make test
+  - sudo make test
