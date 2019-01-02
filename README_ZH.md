@@ -10,7 +10,7 @@ kingbus是一个基于raft强一致协议实现的分布式MySQL binlog 存储�
 
 * 兼容MySQL 复制协议，**通过Gtid方式同步**Master上的binlog，同时支持slave通过Gtid方式从kingbus拉取binlog。
 
-* 跨地域数据复制，kingbus通过raft协议支出跨地域间的数据复制。写入到集群的binlog数据在多个节点间保证强一致，并保证binlog顺序与master上完全一致。
+* 跨地域数据复制，kingbus通过raft协议支持跨地域间的数据复制。写入到集群的binlog数据在多个节点间保证强一致，并保证binlog顺序与master上完全一致。
 
 * 高可用，由于kingbus是构建在Raft强一致协议之上，能够实现集群中过半数节点存活的情况下，整个binlog拉取和推送服务高可用。
 
