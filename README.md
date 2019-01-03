@@ -25,7 +25,7 @@ In a traditional MySQL replication setup a single master server is created and a
 
 * Kingbus allows us to horizontally scale our slaves without fear of overloading the network interface of the master
 
-* Kingbus can also be used to avoide deep nested replication on remote sites, with kinbus you don't need e deeply nested replication.
+* Kingbus can also be used to avoide deep nested replication on remote sites, with kingbus you don't need e deeply nested replication.
 
 * The size of the binlog storage space on the Master can be reduced, and store the binlog in kingbus.
 
