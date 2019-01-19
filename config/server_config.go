@@ -17,6 +17,7 @@ package config
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"strconv"
 	"strings"
 	"time"
@@ -117,9 +118,12 @@ func (s *MasterGtidPurged) EncodeWithType() ([]byte, error) {
 //NewSyncerConfig create a syncer config
 func NewSyncerConfig(args *SyncerArgs) (*SyncerConfig, error) {
 	mysqlAddr := strings.Split(args.MysqlAddr, ":")
-	port, err := strconv.ParseInt(mysqlAddr[1], 10, 16)
+	port, err := strconv.ParseInt(mysqlAddr[1], 10, 32)
 	if err != nil {
 		return nil, err
+	}
+	if port < 1 || port > 65535 {
+		return nil, fmt.Errorf("port is illegal")
 	}
 
 	syncerCfg := replication.BinlogSyncerConfig{
