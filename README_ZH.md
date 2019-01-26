@@ -41,6 +41,7 @@ kingbus采用Apache 2.0协议，相关协议请参看[目录](LICENSES)
 ## 文档
 
 1.[kingbus的架构与设计](docs/cn/architecture.md)
+
 2.[Kingbus 管理API说明](docs/cn/admin_api.md)
 
 3.[通过docker-compose创建kingbus集群](docs/cn/docker_compose.md)
