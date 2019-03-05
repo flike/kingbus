@@ -26,9 +26,11 @@ kingbus是一个基于raft强一致协议实现的分布式MySQL binlog 存储�
 
 更多使用场景，可以参考:
 
-* [Binlog server at booking](https://medium.com/booking-com-infrastructure/mysql-slave-scaling-and-more-a09d88713a20)
+* Booking: [Binlog server at booking](https://medium.com/booking-com-infrastructure/mysql-slave-scaling-and-more-a09d88713a20)
 
-* [Binlog server at facebook](docs/binlog_server_at_fackbook.pdf)
+* Facebook: [Binlog server at facebook](docs/binlog_server_at_fackbook.pdf)
+
+* Google: [mysql-ripple](https://github.com/google/mysql-ripple)
 
 ## Quick Start
 
