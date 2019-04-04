@@ -866,7 +866,7 @@ func (s *KingbusServer) startSyncerServer(args *config.SyncerArgs) error {
 	//update executedGtidSet to lastest
 	err = s.binlogProgress.reset(gtidPurged)
 	if err != nil {
-		log.Log.Errorf("NewSyncer:binlogProgress reset error,err:%s", err)
+		log.Log.Errorf("NewSyncer:binlogProgress reset error,err:%s,gtidPurged:%s", err,gtidPurged)
 		return err
 	}
 
