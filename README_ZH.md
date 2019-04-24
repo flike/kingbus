@@ -48,6 +48,8 @@ kingbus采用Apache 2.0协议，相关协议请参看[目录](LICENSES)
 
 3.[通过docker-compose创建kingbus集群](docs/cn/docker_compose.md)
 
+4.[kingbus架构设计之如何伪装成MySQL Master角色](docs/cn/become_master.md)
+
 ## 反馈
 
 * 如果您在使用kingbus的过程中发现BUG或者有新的功能需求，请提issue。
