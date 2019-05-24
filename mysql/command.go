@@ -171,21 +171,17 @@ func (c *Conn) handleSelectVariableExpr(v *ast.VariableExpr, columnName string) 
 		if err != nil {
 			return err
 		}
-		if v.Name == ServerUUID {
-			result, err = gomysql.BuildSimpleResultset(
-				[]string{columnName},
-				[][]interface{}{
-					[]interface{}{masterInfo.ServerUUID},
-				},
-				false)
-		} else {
-			result, err = gomysql.BuildSimpleResultset(
-				[]string{columnName},
-				[][]interface{}{
-					[]interface{}{masterInfo.ServerID},
-				},
-				false)
+		var value interface{}
+		value = masterInfo.ServerUUID
+		if v.Name != ServerUUID {
+			value = masterInfo.ServerID
 		}
+		result, err = gomysql.BuildSimpleResultset(
+			[]string{columnName},
+			[][]interface{}{
+				[]interface{}{value},
+			},
+			false)
 	case GtidMode:
 		result, err = gomysql.BuildSimpleResultset(
 			[]string{columnName},
