@@ -44,7 +44,8 @@ const (
 	//FileMode is default file mode
 	FileMode = 0600
 	//DirMode is default dir mode
-	DirMode = 0700
+	DirMode          = 0700
+	purgeLogInterval = time.Second * 30
 )
 
 //DiskStorage is the Storage store data in disk
@@ -394,14 +395,13 @@ func (s *DiskStorage) StartPurgeLog() {
 	s.purgeCtx, s.purgeCancel = context.WithCancel(context.Background())
 	s.purgeQuitC = make(chan struct{})
 	s.purgeStarted.Store(true)
-	timer := time.NewTimer(time.Second * 30)
+	timer := time.NewTimer(purgeLogInterval)
 
 	defer func() {
 		close(s.purgeQuitC)
 		timer.Stop()
 	}()
 
-	var deleteSegments []*Segment
 	for {
 		select {
 		case <-s.purgeCtx.Done():
@@ -409,6 +409,7 @@ func (s *DiskStorage) StartPurgeLog() {
 			return
 		case <-timer.C:
 			// check and purge segments
+			var deleteSegments []*Segment
 			s.Mu.Lock()
 			if s.ReserveSegmentCount < len(s.Segments) {
 				deleteCount := len(s.Segments) - s.ReserveSegmentCount
@@ -418,12 +419,15 @@ func (s *DiskStorage) StartPurgeLog() {
 			s.Mu.Unlock()
 
 			if len(deleteSegments) == 0 {
+				timer.Reset(purgeLogInterval)
 				continue
 			}
 			err := s.purgeSegments(deleteSegments, true)
 			if err != nil {
-				log.Log.Fatalf("purgeSegments error, err:%s, deleteSegments:%v", err, deleteSegments)
+				// fatal could could interrupt state if error is from munmap API
+				log.Log.Errorf("purgeSegments error, err:%s, deleteSegments:%v", err, deleteSegments)
 			}
+			timer.Reset(purgeLogInterval)
 		}
 	}
 }
